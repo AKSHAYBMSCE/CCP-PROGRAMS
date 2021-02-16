@@ -1,33 +1,27 @@
-#include<stdio.h>
-#include<conio.h>
-
-void check(int, int);
-
+#include <stdio.h>
+#include <conio.h>
+void printeven(int, int);
 int main()
 {
-    int a,b;
-    printf ("\n Enter starting number:");
-    scanf ("%d", &a );
-    printf ("\n Enter ending number:");
-    scanf ("%d", &b );
-    check(a, b);
+    int m, i, n;
+    printf("Enter the range of numbers within which you want to print all the even numbers. First input M(lower limit) then, N(higher limit). \n");
+    scanf("%d %d", &m, &n);
+    printeven(m, n);
+    getch();
     return 0;
 }
-
-void check(int m, int n)
+void printeven(int a, int b)
 {
-    if (m>n)
-        printf ("\n Error: Please try again.");
-
-    else
+    int i;
+    i = a;
+    printf("The even numbers ranging from %d to %d are : ", a, b);
+    while (i <= b)
     {
-        int i;
-        printf ("\n Even numbers from %d to %d are:" ,m,n);
-        for(i=m; i<=n; i++)
+        if (i % 2 == 0)
         {
-            if(i%2==0)
-            printf("%d \t", i);
+            printf("%d , ", i);
         }
+        i++;
     }
-getch();
+    return;
 }
